@@ -1,0 +1,127 @@
+<div class="grey-wrapper">
+<div class="ui divided grid">
+<div class="row">
+  <div class="five wide column">
+  
+    <div class="green-holder" style="padding: 30px 40px;">
+      <img src="<%= asset_path 'map.png' %>" class="map">
+    </div>
+
+  </div>
+ 
+  <div class="eleven wide column">
+    <div class="logo-wrapper">
+    <img src="<%= asset_path 'logo_wilaya_oujda_with_text.png' %>" class="style-logo">
+    </div>
+      <div class="green-holder" style="margin: 0 20px;">
+ 
+             <div id="slider">
+                <ul class="slides">
+                    <li class="slide"><img src="<%= asset_path '1.jpg' %>" alt="image1" height="300px" width="600px"></li>
+                    <li class="slide"><img src="<%= asset_path '2.jpg' %>" alt="image3" height="300px" width="600px"></li>
+                    <li class="slide"><img src="<%= asset_path '3.jpg' %>" alt="image4" height="300px" width="600px"></li>   
+                    <li class="slide"><img src="<%= asset_path '1.jpg' %>" alt="image5" height="300px" width="600px" href=""></li>
+                </ul>
+            </div>
+
+      </div>
+    
+  </div>
+</div>
+<div class="spacing"> <div class="ui horizontal divider">Actualité</div> </div>
+<div class="row">
+  <div class="three wide column">
+    <div class="agenda-wrapper">
+       <div class="ui medium header"><i class="calendar icon"></i>Dates to note</div>
+
+       <p class="break">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui d</p>
+    </div>
+  </div>
+
+
+<!-- Actualité section -->
+
+  <div class="thirteen wide column">
+
+<!-- pined news -->
+
+  <div class="ui large yellow message" >
+  <div class="min first">
+  <div class="ui medium grey right aligned header"><i class="pin icon"></i></div>
+  <div class="ui medium yellow dividing header">    Changement de lieu !
+  </div>
+<br>
+<img src="<%= asset_path 'new_wilaya.jpg' %>" class="ui small left floated image" >
+  Changement de lieu de la wilaya de Oujda , elle se situe desormais dans ... pres de .... </div></div>
+
+<!-- /pined news -->
+<div class="ui blue message">
+<div class="min">
+
+  <div class="ui medium blue dividing header"> Inauguration du nouveau siège de la wilaya d’Oujda </div>
+<div class="sub header"> 06 Novembre 2013</div>
+<br>
+<img src="<%= asset_path 'wali.png' %>" class="ui small left floated image" >
+
+le wali de la région de l’oriental, gouverneur de la préfecture d'oujda -Angad , M Mohammed Mhidia , procède , mercredi (06/11/13) à Oujda, à l'inaugua​tion du nouveau siège de la wilaya d’Oujda ,dans le cadre de la célébration​n du 38éme anniversaire​re de la marche verte.
+</div>
+</div>
+
+
+    <p class="scroll-content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui d
+    </p>
+  </div>
+  
+</div>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+'use strict';
+$(function(){
+
+    
+    //settings for slider
+    var width = 600;
+    var animationSpeed = 1000;
+    var pause = 3000;
+    var currentSlide = 1;
+
+    //cache DOM elements
+    var $slider = $('#slider');
+    var $slideContainer = $('.slides', $slider);
+    var $slides = $('.slide', $slider);
+
+    var interval;
+
+    function startSlider() {
+        interval = setInterval(function() {
+            $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
+                if (++currentSlide === $slides.length ) {
+                    currentSlide = 1;
+                    $slideContainer.css('margin-left', 0);
+                }
+            });
+        }, pause);
+    }
+    function pauseSlider() {
+        clearInterval(interval);
+    }
+
+    $slideContainer
+        .on('mouseenter', pauseSlider)
+        .on('mouseleave', startSlider);
+
+    startSlider();
+
+
+
+$('.prev').click(function() {
+  clearInterval(interval);
+  backSlider();
+});
+});
+</script>
