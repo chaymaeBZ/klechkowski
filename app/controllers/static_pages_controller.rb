@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
+    @permis = true
   end
 
   def contactUs

@@ -3,7 +3,6 @@
 <head>
   <title>Klechkowski</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'Boostrap_navbar', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -13,5 +12,6 @@
 
 <%= yield %>
 
+<%= render 'layouts/footer' %>
 </body>
 </html>
