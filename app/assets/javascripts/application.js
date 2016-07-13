@@ -11,9 +11,33 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks 
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 //= require semantic-ui
-//= require uikit
+//= require owl.carousel
+var readyLoad;
+readyLoad = function() {
+	
+ $("#owl-demo").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 500,
+      paginationSpeed : 400,
+      singleItem:true,
+      autoPlay: 4000 //Set AutoPlay to 3 seconds
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+
+});
+};
+$(document).ready(readyLoad);
+$(document).on('turbolinks:load', readyLoad);

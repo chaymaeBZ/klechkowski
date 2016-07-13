@@ -32,10 +32,13 @@ gem 'bootstrap-sass', '3.2.0.0'
 #Use semantic ui
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
-gem "uikit-sass-rails"
+gem 'owlcarousel-rails', github: 'acrogenesis/owlcarousel-rails'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+
+gem 'jquery-turbolinks'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

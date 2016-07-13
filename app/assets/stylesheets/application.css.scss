@@ -12,11 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require owl.carousel
+*= require owl.theme
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "semantic-ui";
-@import "uikit";
+
 
 
 // form user validation
@@ -121,4 +123,16 @@ body {
 }
 .spacing {
 	margin : 50px 0;
+}
+
+
+
+
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
 }
