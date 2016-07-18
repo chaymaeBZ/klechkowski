@@ -23,9 +23,37 @@
 
 // form user validation
 body {
-      background-image: image-url('font.jpg');
+      background: image-url('wall.jpg') no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	 background-size: cover;
       text-align: left;
+      background-repeat: repeat-x, repeat-y;
+
     }
+
+.new{
+	.grid {
+      height: 100%; //for form user sign up
+      //height: 45%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 600px;
+    }
+    .white {
+      
+      color: #FFFFFF;
+    }
+.center-div{
+  max-width: 50%;
+  margin: 0 auto 50px;
+    }
+
+}
 
 
 
@@ -122,7 +150,7 @@ body {
 	min-height: 250px;
 }
 .spacing {
-	margin : 50px 0;
+	margin : 40px 0;
 }
 
 
@@ -135,4 +163,20 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
+
+
+.logo-header{
+	height: 55px;
+	width: 40px;
+	margin: -11px 0px;
+}
+
+.map-content {
+	padding: 10px;
+}
+
+
+#clickable {
+	cursor: pointer;
 }

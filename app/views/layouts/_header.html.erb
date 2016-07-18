@@ -1,14 +1,16 @@
 <header>
-	<div class="ui compact grey inverted top fixed menu">
+	<div class="ui compact inverted top fixed menu">
   <div class="item">
-  <div class="column">
-    <img src="<%= asset_path 'logo_wilaya.png' %>" height="55px" width="40px" style="margin: -11px 0px;">
-  </div>
+ 
+  <%= link_to image_tag("logo_wilaya.png", alt: "wilaya de Oujda", class: "logo-header"), index_path %> 
+
+  <!-- THIS SHOULD GO TO HELPER I MEAN CREATE A PATH FOR INDEX -->
+    
   </div>
   <div class="right menu">
-  <a class="item" href="/about">About<i class="info icon"></i></a>
-  <a class="item" href="/">Contact Us <i class="talk icon" style="margin-left: 5px;"></i></a>
-  <a class="item">Help<i class="help icon"></i></a>
+  <a class="item <%= 'active' if current_page?(about_path) %>" href="/about">About<i class="info icon"></i></a>
+  <a class="item <%= 'active item' if current_page?(root_path) %>" href="/">Contact Us <i class="talk icon" style="margin-left: 5px;"></i></a>
+  <a class="item <%= 'active item' if current_page?(help_path) %>" href="/help">Help<i class="help icon"></i></a>
   <a class="item">Papers<i class="file text outline icon" style="margin-left: 5px;"></i></a>
 
 
@@ -18,10 +20,11 @@
         <a class="item"><i class="bar chart icon"></i>Election</a>
         <a class="item"><i class="star icon"></i>Ramed</a>
         <a class="item"><i class="car icon"></i>Permis</a>
+        <a class="item"><i class="plane icon"></i>Passport</a>
       </div>
     </div>
     <div class="item">
-        <div class="ui olive button">Sign In</div>
+    <%= link_to "Sign Up", signUp_path, class: "ui olive button" %>
     </div>
     </div>
 </header>

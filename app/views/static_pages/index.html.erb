@@ -30,11 +30,12 @@
 
  
 </div>
-            </div>
+    </div>
     
   </div>
 </div>
-<div class="spacing"> <div class="ui horizontal divider">Actualité</div> </div>
+
+<div class="spacing"> <div class="ui horizontal divider"><div class="ui inverted medium header">Actualité</div></div> </div>
 <div class="row">
   <div class="three wide column">
     <div class="agenda-wrapper">
@@ -60,7 +61,7 @@
 <img src="<%= asset_path 'new_wilaya.jpg' %>" class="ui small left floated image" >
    Changement de lieu de la wilaya de Oujda , elle se situe desormais dans ... pres de ....
   pour plus d'information regarder le lieu comme l'indique la carte GOOGLE MAPS en haut de la page à gauche, le nouveau lieu a permis à minimiser certaines ...
-  <a href="/"><div class="ui medium  grey right aligned header"><i class="marker icon"></i></div></a>
+  <div class="ui medium  grey right aligned header"><a id="clickable"><i class="marker icon"></i></a></div>
 <div class="ui tiny right aligned header"><a href=""><u>read more ...</u></a></div>
 
    </div></div>
@@ -105,4 +106,4 @@ le wali de la région de l’oriental, gouverneur de la préfecture d'oujda -Ang
 </div>
 </div>
 
-
+<%= render 'layouts/maps_modal' %>

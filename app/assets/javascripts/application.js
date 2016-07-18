@@ -20,7 +20,10 @@
 //= require owl.carousel
 var readyLoad;
 readyLoad = function() {
-	
+       
+	$(".marker.icon").click(function() {
+			$('.ui.modal').modal('show');
+	});
  $("#owl-demo").owlCarousel({
  
       navigation : true, // Show next and prev buttons
@@ -38,6 +41,11 @@ readyLoad = function() {
  
 
 });
+ 
 };
+
 $(document).ready(readyLoad);
 $(document).on('turbolinks:load', readyLoad);
+$(document).ready(function() {
+    $('.ui.compact.inverted.top.fixed.menu').menu();
+});
