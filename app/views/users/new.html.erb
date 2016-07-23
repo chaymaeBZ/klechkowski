@@ -1,72 +1,52 @@
+<% provide(:title, 'Sign up') %>
 <div class="new">
-
 <div class="ui middle aligned center aligned grid" >
   <div class="column">
     <h2 class="ui image header" >
-    <div class="column"><img src="<%= asset_path 'wilaya.png' %>" class="image" height="110" width="110" style="margin: 0 0 10px 30px;"></div>
+    <div class="column"><img src="<%= asset_path 'wilaya.png' %>" class="image" height="110" width="110" style="margin: 0 0 10px 25px;"></div>
       
-      <div class="content white" style="margin-bottom: 20px;">
+      <div class="white" >
         خاص بموظفي الولاية
       </div>
     </h2>
 </div>
 </div>
-<div class="center-div">
-    <form class="ui large form ">
-      <div class="ui stacked segment">
 
-          <div class="ui form">
 
-  <div class="two fields">
-    <div class="field ">
-      <label>First Name</label>
-      <input placeholder="First Name" type="text">
+<div class="ui raised segment" style="margin: 60px 400px; background: rgb(246, 227, 186);">
+
+  <h4 class="ui dividing large header">Shipping Information</h4>
+
+ <%= render 'shared/error_massages' %>
+    <%= form_for(@user, html: { class: 'ui form' }) do |f| %>
+
+
+
+    <div class="required field <%= 'required field' if @user.errors.include? "Name can't be blank" %>">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Full name", type: 'text'%>
     </div>
-    <div class="field">
-      <label>Last Name</label>
-      <input placeholder="Last Name" type="text">
+
+    <div class="required field">
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder: "Foobar@example.com", type: 'email' %>
     </div>
-  </div>
 
-<div class="field">
-    <label>E-mail</label>
-    <input type="email" placeholder="name@email.com">
-  </div>
-
-
-  <div class="field ">
-    <label>Gender</label>
-    <div class="ui selection dropdown">
-      <div class="default text">Select</div>
-      <i class="dropdown icon"></i>
-      <input type="hidden" name="gender">
-      <div class="menu">
-        <div class="item" data-value="male">Male</div>
-        <div class="item" data-value="female">Female</div>
-      </div>
+    <div class="required field">
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: "Password", type: 'password' %>
     </div>
-  </div>
 
- <div class="three fields">
-    <div class="field">
-      <label>Code number</label>
-      <input type="text" placeholder="Code number">
+    <div class="required field">
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, placeholder: "Retype password", type: 'password' %>
     </div>
-  </div>
+    
 
-  <div class="inline field ">
-    <div class="ui checkbox">
-      <input type="checkbox" tabindex="0" class="hidden">
-      <label>I agree to the Terms and Conditions</label>
-    </div>
-  </div>
-<button class="fluid ui blue button">REGISTER</button>
-</div>
+    <%= f.submit "Create my account", class: "ui blue button" %>
+    <% end %>
 
 
-</div>
 
-
-</form>
 </div>
 </div>

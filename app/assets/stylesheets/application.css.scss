@@ -45,7 +45,6 @@ body {
       max-width: 600px;
     }
     .white {
-      
       color: #FFFFFF;
     }
 .center-div{
@@ -179,4 +178,15 @@ body {
 
 #clickable {
 	cursor: pointer;
+}
+
+.full-page {
+
+  height: 100%;
+
+  background-color: black;
+}
+
+.user-content {
+	margin: 30px 30px 30px 2px;
 }

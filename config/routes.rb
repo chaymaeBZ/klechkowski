@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
-  get 'index' => 'static_pages#index'
-
   get 'contactUs' => 'static_pages#contactUs'
 
   get 'FAQ' => 'static_pages#FAQ'
