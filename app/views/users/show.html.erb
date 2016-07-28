@@ -33,15 +33,7 @@
 
 <div class="twelve wide column">
 <div class="user-content">
-<% flash.each do |message_type, message| %>
-<div class="ui <%= message_class(message_type) %> message">
-  <i class="close icon"></i>
-  <div class="header">
-    Your user registration was successful.
-  </div>
-  <p>You may now log-in with the username you have chosen</p>
-</div>
-<% end %>
+<%= render 'shared/flash_message' %>
 </div>
 	<br>
 	<br>

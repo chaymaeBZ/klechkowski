@@ -23,9 +23,38 @@
         <a class="item"><i class="plane icon"></i>Passport</a>
       </div>
     </div>
-    <div class="item">
-    <%= link_to "Sign Up", signUp_path, class: "ui olive button" %>
+    
+    <% if !logged_in? %>
+      <div class="item">
+      <%= link_to "Log in", login_path, class: "ui olive button" %>
+      </div>
+    <% else %>
+
+      <div class="ui simple dropdown item">
+      <%= current_user.name %><i class="dropdown icon"></i>
+      <div class="menu">
+
+      <%= link_to current_user, class: 'item' do %>
+      
+      <%= content_tag :i, "", class: 'user icon' %>Profile
+      <% end %>
+
+      <%= link_to "#", class: 'item' do %>
+      
+      <%= content_tag :i, "", class: 'settings icon' %>Settings
+      <% end %>
+      <div class="ui divider">
+      </div>
+        <%= link_to logout_path, class: 'item', method: "delete" do %>
+      
+      <%= content_tag :i, "", class: 'sign out icon' %>Log out
+      <% end %>
+      
+       
+      </div>
     </div>
+    <% end %>
+    
     </div>
 </header>
 

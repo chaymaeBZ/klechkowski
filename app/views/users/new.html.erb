@@ -22,7 +22,7 @@
 
 
 
-    <div class="required field <%= 'required field' if @user.errors.include? "Name can't be blank" %>">
+    <div class="required field">
     <%= f.label :name %>
     <%= f.text_field :name, placeholder: "Full name", type: 'text'%>
     </div>
@@ -43,7 +43,7 @@
     </div>
     
 
-    <%= f.submit "Create my account", class: "ui blue button" %>
+    <%= f.submit "Create my account", class: "ui fluid blue button" %>
     <% end %>
 
 
