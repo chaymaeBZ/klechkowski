@@ -24,6 +24,9 @@ readyLoad = function() {
 	$(".marker.icon").click(function() {
 			$('.ui.modal').modal('show');
 	});
+      $('.change.effect .image').dimmer({
+  on: 'hover'
+});
  $("#owl-demo").owlCarousel({
  
       navigation : true, // Show next and prev buttons

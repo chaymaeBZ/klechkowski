@@ -181,12 +181,32 @@ body {
 }
 
 .full-page {
-
   height: 100%;
-
   background-color: black;
 }
 
 .user-content {
 	margin: 30px 30px 30px 2px;
+}
+
+#center {
+	display: table;
+	margin: 0 auto; 
+}
+
+.ui.small.image.custom {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+}
+
+.users {
+list-style: none;
+margin: 0;
+li {
+overflow: auto;
+padding: 10px 0;
+border-bottom: 1px solid $gray-lighter;
+}
 }

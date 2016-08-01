@@ -13,6 +13,9 @@
   <a class="item <%= 'active item' if current_page?(help_path) %>" href="/help">Help<i class="help icon"></i></a>
   <a class="item">Papers<i class="file text outline icon" style="margin-left: 5px;"></i></a>
 
+<%= link_to users_path, class: 'item' do %>Users
+    <%= content_tag :i, "", class: 'users icon', style: "margin-left: 5px;" %>
+    <% end %>
 
     <div class="ui simple dropdown item">
       Services <i class="dropdown icon"></i>
@@ -30,7 +33,10 @@
       </div>
     <% else %>
 
-      <div class="ui simple dropdown item">
+
+
+      <div class="ui simple dropdown item"><div class="ui small circular image custom">
+            <%= gravatar_for current_user %></div>
       <%= current_user.name %><i class="dropdown icon"></i>
       <div class="menu">
 
@@ -39,7 +45,7 @@
       <%= content_tag :i, "", class: 'user icon' %>Profile
       <% end %>
 
-      <%= link_to "#", class: 'item' do %>
+      <%= link_to edit_user_path(current_user), class: 'item' do %>
       
       <%= content_tag :i, "", class: 'settings icon' %>Settings
       <% end %>

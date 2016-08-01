@@ -1,0 +1,18 @@
+
+<div class="grey-wrapper">
+	<%= render 'shared/flash_message' %>
+	<div class="ui raised segment">
+	<div class="ui grid">
+	<div class="one wide  column "></div>
+	<div class="fifteen wide column">
+	<h1 id="center" style="margin-top: 20px;">All users</h1>
+	<%= will_paginate %>
+	
+		<ul class="users">
+			<%= render @users %>
+		</ul>
+		<%= will_paginate %>
+	</div>
+</div>
+</div>
+</div>

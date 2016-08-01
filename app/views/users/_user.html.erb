@@ -1,0 +1,14 @@
+<li>
+	<div class="ui mini circular image">
+		<%= gravatar_for(user) %>
+	</div>
+	<%= link_to user.name, user %>
+<% if current_user.admin? && !current_user?(user) %>
+| <%= link_to "delete", user, method: :delete,
+data: { confirm: "You sure?" } %>
+<% end %>
+
+
+
+
+</li>
