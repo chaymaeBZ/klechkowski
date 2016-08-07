@@ -27,6 +27,14 @@ readyLoad = function() {
       $('.change.effect .image').dimmer({
   on: 'hover'
 });
+      $('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+      .classList.add('hidden')
+    ;
+  });
  $("#owl-demo").owlCarousel({
  
       navigation : true, // Show next and prev buttons
