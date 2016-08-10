@@ -1,0 +1,40 @@
+<% provide(:title, 'Sign up') %>
+<div class="new">
+<div class="ui middle aligned center aligned grid" >
+  <div class="column">
+    <h2 class="ui image header" >
+    <div class="column"><img src="<%= asset_path 'wilaya.png' %>" class="image" height="110" width="110" style="margin: 0 0 10px 25px;"></div>
+      
+      <div class="white" >
+        خاص بموظفي الولاية
+      </div>
+    </h2>
+</div>
+</div>
+<div style="margin: 10px 400px -50px 400px;"><%= render 'shared/flash_message' %></div>
+
+<div class="ui raised segment" style="margin: 60px 400px; background: rgb(246, 227, 186);">
+
+
+
+  <h4 class="ui dividing large header">Reset password</h4>
+
+    <%= form_for(@user, url: password_reset_path(params[:id]), html: { class: 'ui form' }) do |f| %>
+
+	<%= hidden_field_tag :email, @user.email %>
+
+	<div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: "Password", type: 'password' %>
+    </div>
+
+    <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, placeholder: "Retype password", type: 'password' %>
+    </div>
+
+    <%= f.submit "Reset my password", class: "ui fluid blue button" %>
+    <% end %>
+</div>
+
+</div>
