@@ -42,7 +42,7 @@
     </div>
 
     <div class="fileld" style="margin-bottom: 20px;">
-     <% if current_user %>
+     <% if !current_page?(signUp_path) %>
         <a href="http://gravatar.com/emails" target=_blank><u>change profil picture</u></a>
      <% end %>
 
