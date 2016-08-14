@@ -26,8 +26,8 @@ class PasswordResetsController < ApplicationController
   	if password_blank?
   		flash.now[:danger] = "Password can't be blank"
   		render 'edit'
-  	elsif @user.apdate_attributes(user_params)
-  		log_in user
+  	elsif @user.update_attributes(user_params)
+  		log_in @user
   		flash[:success] = "Your password has been reset"
   		redirect_to @user
   	else
@@ -35,9 +35,7 @@ class PasswordResetsController < ApplicationController
   	end
   end
 
-  def password_reset_expired?
-		reset_sent_at < 2.hours.ago
-	end
+ 
 
   private
 

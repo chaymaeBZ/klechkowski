@@ -5,7 +5,7 @@ michael:
   password_digest: <%= User.digest('password') %>
   admin: true
   activated: true
-  activated_at: <%= Time.zone.now.to_datetime %>
+  activated_at: <%= 2.hours.ago.to_datetime %>
 
 archer:
   name: Sterling Archer
