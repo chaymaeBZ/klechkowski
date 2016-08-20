@@ -23,3 +23,9 @@ User.create!(name: "Example User",
 				activated: true,
 				activated_at: Time.zone.now.to_datetime)
 end
+50.times do
+	content = Faker::Lorem.sentence(20)
+	title = Faker::Lorem.sentence(5)
+	Article.create!(content: content,
+					title: title)
+end

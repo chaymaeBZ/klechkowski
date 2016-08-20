@@ -146,7 +146,7 @@ body {
 	margin: 0 10px 10px 0 ;
 }
 .first {
-	min-height: 250px;
+	min-height: 200px;
 }
 .spacing {
 	margin : 40px 0;
@@ -209,4 +209,13 @@ overflow: auto;
 padding: 10px 0;
 border-bottom: 1px solid $gray-lighter;
 }
+}
+
+.articles {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		margin-bottom: 20px;
+	}
 }

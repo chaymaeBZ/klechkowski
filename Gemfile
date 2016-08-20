@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '5.0.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -41,6 +41,12 @@ gem 'bootstrap-sass', '3.2.0.0'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 gem 'owlcarousel-rails', github: 'acrogenesis/owlcarousel-rails'
+
+#article's pictures gems
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '3.8.0'
+gem 'fog', '1.23.0'
+gem 'net-ssh'
 
 
 # Use Unicorn as the app server

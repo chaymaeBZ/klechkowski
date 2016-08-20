@@ -4,22 +4,22 @@
     <div class="column"><img src="<%= asset_path 'wilaya.png' %>" class="image" height="110" width="110" style="margin: 0 0 10px 25px;"></div>
       
       <div class="white" >
-        <%= header_text %>
+        <%= header_text(@update) %>
       </div>
     </h2>
 </div>
 </div>
 
-<div style="margin: 10px 400px -50px 400px;"> <%= render 'shared/error_massages' %></div>
 
-<div class="ui raised segment" style="margin: 60px 400px; background: rgb(246, 227, 186);">
+
+<div class="ui raised segment articles" style="margin: 60px 400px; background: rgb(246, 227, 186);">
 
   <h4 class="ui dividing large header">Shipping Information</h4>
 
 
     <%= form_for(@user, html: { class: 'ui form' }) do |f| %>
 
-
+<div class="article_errors"><div style="margin: 10px 400px -50px 400px;"><%= render 'shared/error_massages', object: f.object %> </div></div>
 
     <div class="required field">
     <%= f.label :name %>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="fileld" style="margin-bottom: 20px;">
-     <% if !current_page?(signUp_path) %>
+     <% if @update %>
         <a href="http://gravatar.com/emails" target=_blank><u>change profil picture</u></a>
      <% end %>
 
@@ -50,7 +50,7 @@
 
    
     
-    <% form_button_text do |i|  %>
+    <% form_button_text(@update) do |i|  %>
     <%= f.submit "#{i}", class: "ui fluid blue button" %>
      <% end %>
 

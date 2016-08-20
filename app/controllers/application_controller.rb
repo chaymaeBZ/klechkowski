@@ -4,4 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # make this helper avaible also into every controller. rails include helpers in views automatically
   include SessionsHelper
+  def admin_user
+      redirect_to root_url unless logged_in? && current_user.admin?
+    end
 end

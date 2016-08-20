@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def index
     @permis = true
+    @articles = Article.paginate(page: params[:page], per_page: 4)
   end
 
   def contactUs

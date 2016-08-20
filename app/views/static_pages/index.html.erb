@@ -53,13 +53,13 @@
 
 <!-- pined news -->
 
-  <div class="ui large yellow message" >
+  <div class="ui yellow message" >
   <div class="min first">
-  <div class="ui medium grey right aligned header"><i class="pin icon"></i></div>
-  <div class="ui medium yellow dividing header" > Changement de lieu !
-  </div>
+  
+  <div class="ui medium yellow dividing header" > Changement de lieu ! <i class="pin icon" style="margin-left: 671px; color: grey;"></i></div>
+
 <br>
-<img src="<%= asset_path 'new_wilaya.jpg' %>" class="ui small left floated image" >
+<img src="<%= asset_path 'new_wilaya.jpg' %>" class="ui small left floated image" height="200px">
    Changement de lieu de la wilaya de Oujda , elle se situe desormais dans ... pres de ....
   pour plus d'information regarder le lieu comme l'indique la carte GOOGLE MAPS en haut de la page à gauche, le nouveau lieu a permis à minimiser certaines ...
   <div class="ui medium  grey right aligned header"><a id="clickable"><i class="marker icon"></i></a></div>
@@ -70,33 +70,50 @@
   
 
 <!-- /pined news -->
-<div class="ui blue message">
-<div class="min">
 
-  <div class="ui medium blue dividing header"> Inauguration du nouveau siège de la wilaya d’Oujda </div>
-<div class="sub header"> 06 Novembre 2013</div>
+
+
+
+
+
+
+
+
+  <div class="articles">
+  <% i = 0 %>
+  <% @articles.each do |article| %>
+  <% color = gen_color(i) %>
+<div class="ui <%= "#{color}" %> message" style="overflow: hidden;">
+<div style="text-align: right;"><% if current_user && current_user.admin? %>
+<u><%= link_to "delete", article, method: :delete, data: { confirm: "You sure?" } %></u>
+  <% end %>
+</div>
+
+
+  <div class="ui medium <%= "#{color}" %> dividing header"><%= article.title %></div>
+<div class="sub header"><%= article.created_at.to_s(:long) %></div>
 <br>
+
+<% if article.picture? %>
+<%= image_tag article.picture.url, class: "ui small left floated image" %>
+<% else %>
 <img src="<%= asset_path 'wali.png' %>" class="ui small left floated image" >
+<% end %>
 
-le wali de la région de l’oriental, gouverneur de la préfecture d'oujda -Angad , M Mohammed Mhidia , procède , mercredi (06/11/13) à Oujda, à l'inaugua​tion du nouveau siège de la wilaya d’Oujda ,dans le cadre de la célébration​n du 38éme anniversaire​re de la marche verte.
+<%= truncate article.content, length: 300 %>
 
-<div class="ui tiny right aligned header"><a href=""><u>read more ...</u></a></div>
+<div class="ui tiny right aligned header">
+<u><%= link_to "read more...", article %></u>
+</div>
 
 </div>
+  <% i=i+1 %>
+  <% end %>
 </div>
+<%= will_paginate @articles %>
 
-<div class="ui teal message">
-  <div class="min">
-    <div class="ui medium teal dividing header">Elections régionales</div>
-<div class="sub header"> 12 Decembre 2014</div>
-<br>
-<img src="<%= asset_path 'Elections.jpg' %>" class="ui small left floated image" >
-  Oujda: le coup d'envoi des journées portes ouvertes, organisées par l'agence urbaine d'Oujda au profit de la communauté marocaine résidant à l'étranger, a été donné lundi. Cette manifestation qui célèbre la journée nationale du migrant et se poursuit justqu'au 15 coutant, vise à accompagner, orienter et informer les membres de la communauté marocaine résidant à l'étranger ..
 
-  <div class="ui tiny right aligned header"><a href=""><u>read more ...</u></a></div>
 
-  </div>  
-</div>
 
     <p class="scroll-content">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui d

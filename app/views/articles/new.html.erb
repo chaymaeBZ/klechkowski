@@ -1,0 +1,27 @@
+<div style="margin: 10px 200px 50px;">
+
+<div class="ui raised segment articles" style=" border-radius: 25px;background: rgb(246, 227, 186);">
+
+  <h4 class="ui dividing large header">Publishing article</h4>
+
+<%= form_for(@article, html:{ multipart: true, class:"ui form" }) do |f| %>
+	<div class="article_errors"><%= render 'shared/error_massages' , object: f.object %></div>
+
+<div class="ui left corner labeled input" >
+<%= f.text_field :title, placeholder: "title", type:'text' %>
+	<div class="ui left corner label">
+    <i class="asterisk icon"></i>
+  </div>
+</div>
+  <div class="field">
+<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+</div>
+  <div class="field">
+<%= f.label :content, "Content :", style:"margin: 8px;" %>
+<%= f.text_area :content, placeholder: "Compose your text here..." %>
+</div>
+<%= f.submit "Publish", class:"ui submit button", style:"background: #CAC8C8;" %>
+
+<% end %>
+</div>
+</div>

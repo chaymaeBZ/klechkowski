@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash[:info] = "Please check your email to activate the account."
       redirect_to root_url
   	else
   		render 'new'
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @update = true
     @user = User.find(params[:id])
   end
 
@@ -43,6 +44,7 @@ class UsersController < ApplicationController
       flash[:success] = "your profil has been updared sucessfuly"
       redirect_to @user
     else
+      @update = true
       render 'edit'
     end
   end
@@ -67,7 +69,5 @@ class UsersController < ApplicationController
       redirect_to root_url unless current_user?(@user)
     end
 
-    def admin_user
-      redirect_to root_url unless logged_in? && current_user.admin?
-    end
+    
 end

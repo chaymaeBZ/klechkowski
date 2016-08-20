@@ -8,12 +8,12 @@ module UsersHelper
 		image_tag(gravatar_url, alt: "#{user.name}")
 	end
 
-	def header_text
-		current_page?(signUp_path) ? "خاص بموظفي الولاية" : "Update your profile"
+	def header_text(update)
+		update ? "Update your profile" : "خاص بموظفي الولاية" 
 	end
 
-	def form_button_text
-		if current_page?(signUp_path)
+	def form_button_text(update)
+		if !update
 			yield "Create account" 
 		else
 			yield "Save changes" 
