@@ -34,7 +34,31 @@ Rails.application.routes.draw do
 
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  resources :articles, only: [:new, :create, :show, :destroy]
+  
+
+#index for get issues when create fails
+
+  resources :articles, only: [:new, :create, :show, :destroy, :index] 
+
+
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+      post :restore
+      post :mark_as_read
+    end
+  end
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    collection do
+      delete :empty_trash
+    end
+  end
+
+
+  resources :messages, only: [:new, :create]
+
 
 
 

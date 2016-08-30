@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
+gem 'rails-i18n', '~> 4.0.0'
+
+
 #generating users for development
 gem 'faker', '1.4.2'
 
@@ -49,10 +52,18 @@ gem 'fog', '1.23.0'
 gem 'net-ssh'
 
 
+gem 'gravatar_image_tag'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 gem 'jquery-turbolinks'
+
+# gem for users messaging
+gem 'mailboxer'
+
+# gem for chooser when selecting recipients
+gem 'chosen-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

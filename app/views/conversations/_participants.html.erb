@@ -1,0 +1,7 @@
+<% conversation.participants.each do |participant| %>
+	<% unless participant == current_user %>
+	<div class="ui circular tiny image">
+		<%= gravatar_for participant %>
+	</div>
+	<% end %>
+<% end %>

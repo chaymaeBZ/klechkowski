@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
 	has_secure_password
 	
 	validates :password, length: { minimum: 6 }, allow_blank: true
+
+	# messaging
+	acts_as_messageable
 	
 	# Returns the hash digest of the given string.
 	def User.digest(string)
@@ -58,6 +61,12 @@ class User < ActiveRecord::Base
 	def password_reset_expired?
 		reset_sent_at < 2.hours.ago.to_datetime
 	end
+
+	def mailboxer_email(object)
+		email
+	end
+
+
 	private
 
 		def downcase_email

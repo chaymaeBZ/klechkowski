@@ -18,6 +18,8 @@
 //= require bootstrap-sprockets
 //= require semantic-ui
 //= require owl.carousel
+//= require chosen-jquery
+//= require messages
 var readyLoad;
 readyLoad = function() {
        
@@ -34,6 +36,7 @@ if (size_in_megabytes > 5) {
 alert('Maximum file size is 5MB. Please choose a smaller file.');
 }
 });
+      $('.chosen-it').chosen();
       $('.message .close')
   .on('click', function() {
     $(this)

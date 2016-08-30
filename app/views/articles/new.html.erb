@@ -13,10 +13,14 @@
     <i class="asterisk icon"></i>
   </div>
 </div>
-  <div class="field">
-<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+
+ <div class="ui field ">
+<%= f.label :file, "Image :", style:"margin: 8px; display:block;" %>
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+
 </div>
-  <div class="field">
+
+  <div class="field ">
 <%= f.label :content, "Content :", style:"margin: 8px;" %>
 <%= f.text_area :content, placeholder: "Compose your text here..." %>
 </div>

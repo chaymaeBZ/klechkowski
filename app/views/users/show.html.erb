@@ -1,117 +1,45 @@
-<div style="margin-top:-60px;"></div>
+<div class="ui raised segment" style="margin: 60px 200px; background: rgb(246, 227, 186);">
+
 <div class="ui grid">
-<div class="four wide column">
 
-<div class="ui inverted segment" style="height:100%;">
+	<div class="five wide column">
+	<div class="ui special cards">
+		<div class="card">
+		    <div class="blurring dimmable image">
+		      <div class="ui inverted dimmer">
+		        <div class="content">
+		          <div class="center">
+		            <div class="ui primary button">Add Friend</div>
+		          </div>
+		        </div>
+		      </div>
+		      <%= gravatar_for(@user) %>
+		    </div>
+		    <div class="content">
+		      <a class="header"><%= @user.name %></a>
+		      <div class="meta">
+		        <span class="date">Create in <%= @user.created_at.strftime("%-d %B %Y") %></span>
+		      </div>
+		    </div>
+		    <div class="extra content">
+		      <%= link_to "Send message", new_message_path(to: @user.id), class: "ui blue button" %>
+		    </div>
+		</div>
+	</div>
+		
+	</div>
 
-<div class="change effect">
+<div class="eleven wide column">
+	
+	
+    <img src="<%= asset_path 'logo_wilaya_oujda_with_text.png' %>" style="margin: 100px 20px;">
+    
 
-<div class="ui small circular image" id="center">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <a href="http://gravatar.com/emails" target=_blank> <div class="ui inverted header" ><u>Change</u></div></a>
-          </div>
-        </div>
-      </div>
-      
-      <%= gravatar_for(@user)%>
-      
-    </div>
-
-
-
-<div class="ui large inverted vertical menu" style="width: 100%;">
-  <a class="active item">
-    <div class="ui small teal label">1</div>
-    Inbox
-  </a>
-  <a class="item">
-    <div class="ui small label">51</div>
-    Spam
-  </a>
-  <a class="item">
-    <div class="ui small label">1</div>
-    Updates
-  </a>
-  <div class="item">
-    <div class="ui icon input">
-      <input type="text" placeholder="Search mail...">
-      <i class="search icon"></i>
-    </div>
-  </div>
 </div>
+
 
 
 </div>
 
-</div>
-</div>
-<div class="twelve wide column">
-<div class="user-content">
-<%= render 'shared/flash_message' %>
-</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-</div>
-
+	
 </div>

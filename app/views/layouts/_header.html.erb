@@ -9,7 +9,7 @@
   </div>
   <div class="right menu">
   <a class="item <%= 'active' if current_page?(about_path) %>" href="/about">About<i class="info icon"></i></a>
-  <a class="item <%= 'active item' if current_page?(root_path) %>" href="/">Contact Us <i class="talk icon" style="margin-left: 5px;"></i></a>
+  <a class="item " href="/">Contact Us <i class="talk icon" style="margin-left: 5px;"></i></a>
   <a class="item <%= 'active item' if current_page?(help_path) %>" href="/help">Help<i class="help icon"></i></a>
   <a class="item">Papers<i class="file text outline icon" style="margin-left: 5px;"></i></a>
 
@@ -40,7 +40,7 @@
       <%= current_user.name %><i class="dropdown icon"></i>
       <div class="menu">
 
-      <%= link_to current_user, class: 'item' do %>
+      <%= link_to conversations_path, class: 'item' do %>
       
       <%= content_tag :i, "", class: 'user icon' %>Profile
       <% end %>
