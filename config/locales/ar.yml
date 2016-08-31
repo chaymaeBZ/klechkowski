@@ -1,5 +1,13 @@
 ar:
   activerecord:
+    models:
+      user: مستخدم
+    attributes:
+      user:
+        name: الإسم
+        email: البريد الإلكتروني
+        password: كلمة السر
+        password_confirmation: تثبيت كلمة السر
     errors:
       messages:
         record_invalid: 'فشل التحقّق من: %{errors}'
@@ -152,8 +160,8 @@ ar:
       accepted: يجب أن تقبل %{attribute}
       blank: لا يمكن أن يكون محتوى %{attribute} فارغاً
       present:  يجب ترك حقل %{attribute} فارغاً
-      confirmation: محتوى %{attribute} لا يتوافق مع %{attribute}
-      empty: يمكن لا يكون محتوى %{attribute} فارغاً
+      confirmation: خطأ عند إعادة كتابة %{attribute}
+      empty: لا يمكن أن يكون محتوى %{attribute} فارغاً
       equal_to: يجب أن يساوي طول %{attribute} %{count}
       even: يجب أن يكون عدد %{attribute} زوجياً
       exclusion:  حقل %{attribute} محجوز
@@ -275,3 +283,8 @@ ar:
       long: "%d %B, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: مساءً
+  faults_head: "الإستمارة تحتوي على "
+  faults:
+    one: خطأ
+    two: خطئان
+    few: أخطاء

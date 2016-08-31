@@ -10,5 +10,10 @@ module ApplicationHelper
 			"negative"
 		end
 	end
+
+	def arabic?
+		params[:local] == 'ar'
+	end
+	
 end
 

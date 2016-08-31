@@ -25,8 +25,16 @@ class ApplicationController < ActionController::Base
   	redirect_back_or root_path
   end
 
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
+ 
+
   private
     def set_user_language
-      I18n.locale = 'ar'
+      I18n.default_locale = 'en'
+      locale = params[:locale] unless params[:locale].blank?
+      I18n.locale = locale
     end
 end

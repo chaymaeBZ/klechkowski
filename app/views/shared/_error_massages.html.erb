@@ -1,16 +1,26 @@
 
 <% if object.errors.any? %>
-<div class="ui error message">
-<div class="header">
-    The form contains <%= pluralize(object.errors.count, "error") %>.
+<% if arabic? %>
+	<div dir="rtl" lang="ar" style="text-align: right;">
+	<h1>IT is arabic</h1>
+<% end %>	
+<div class="ui error message" >
+<div class="header" >
+      The form contains <%= pluralize(object.errors.count, "error") %>:
     
 </div>
-<ul class="list">
+<ul>
 	<% object.errors.full_messages.each do |msg| %>
 	<li><%= msg %></li>
 	<% end %>
 </ul>
 </div>
+
+	
+<% if arabic? %>
+	</div>
+<% end %>
+
 <% end %>
 
 

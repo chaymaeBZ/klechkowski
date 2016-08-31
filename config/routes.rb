@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  root 'static_pages#index'
+
+  
+
   get 'articles/new'
 
   get 'articles/index'
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  root 'static_pages#index'
+  
 
   get 'contactUs' => 'static_pages#contactUs'
 
@@ -50,6 +54,7 @@ Rails.application.routes.draw do
     end
   end
 
+
   resources :conversations, only: [:index, :show, :destroy] do
     collection do
       delete :empty_trash
@@ -58,6 +63,7 @@ Rails.application.routes.draw do
 
 
   resources :messages, only: [:new, :create]
+
 
 
 

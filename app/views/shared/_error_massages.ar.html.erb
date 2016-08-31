@@ -1,0 +1,20 @@
+
+<% if object.errors.any? %>
+	
+<div class="ui error message" dir="rtl" lang="ar" style="text-align: right;">
+<div class="header" >
+     <%= t('faults_head') %> <%= t('faults', :count => object.errors.count) %>:
+    
+</div>
+<ul>
+	<% object.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+</ul>
+</div>
+
+
+<% end %>
+
+
+
