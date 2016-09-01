@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 	def create
 		@article = Article.new(article_params)
 		if @article.save
-			flash[:success] = "Article published sucessfuly"
+			flash[:success] = t :article_published
 			redirect_to root_url
 		else
 			render 'new'
@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     Article.find(params[:id]).destroy
-    flash[:success] = "Article deleted"
+    flash[:success] = t :article_deleted
     redirect_to root_url
   end
 

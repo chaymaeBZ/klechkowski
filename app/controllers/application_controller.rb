@@ -15,13 +15,13 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     unless logged_in? #if not logged in
       store_location
-      flash[:danger] = "please log in first"
+      flash[:danger] = t :log_in_first
       redirect_to login_url
     end
   end
 
   rescue_from ActiveRecord::RecordNotFound do 
-  	flash[:warning] = "Resource not found"
+  	flash[:warning] = t :resource_ont_found
   	redirect_back_or root_path
   end
 
