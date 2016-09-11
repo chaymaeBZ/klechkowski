@@ -8,22 +8,22 @@
     
   </div>
   <div class="right menu">
-  <a class="item <%= 'active' if current_page?(about_path) %>" href="/about">About<i class="info icon"></i></a>
-  <a class="item " href="/">Contact Us <i class="talk icon" style="margin-left: 5px;"></i></a>
-  <a class="item <%= 'active item' if current_page?(help_path) %>" href="/help">Help<i class="help icon"></i></a>
-  <a class="item">Papers<i class="file text outline icon" style="margin-left: 5px;"></i></a>
+  <a class="item <%= 'active' if current_page?(about_path) %>" href="/about"><%= t :about %><i class="info icon"></i></a>
+  <a class="item " href="/"><%= t :contact_us %><i class="talk icon" style="margin-left: 5px;"></i></a>
+  <a class="item <%= 'active item' if current_page?(help_path) %>" href="/help"><%= t :help %><i class="help icon"></i></a>
+  <a class="item"><%= t :papers %><i class="file text outline icon" style="margin-left: 5px;"></i></a>
 
-<%= link_to users_path, class: 'item' do %>Users
+<%= link_to users_path, class: 'item' do %><%= t :users %>
     <%= content_tag :i, "", class: 'users icon', style: "margin-left: 5px;" %>
     <% end %>
 
     <div class="ui simple dropdown item">
-      Services <i class="dropdown icon"></i>
+      <%= t :services %><i class="dropdown icon"></i>
       <div class="menu">
-        <a class="item"><i class="bar chart icon"></i>Election</a>
-        <a class="item"><i class="star icon"></i>Ramed</a>
-        <a class="item"><i class="car icon"></i>Permis</a>
-        <a class="item"><i class="plane icon"></i>Passport</a>
+        <a class="item"><i class="bar chart icon"></i><%= t :election %></a>
+        <a class="item"><i class="star icon"></i><%= t :ramed %></a>
+        <a class="item"><i class="car icon"></i><%= t :permis %></a>
+        <a class="item"><i class="plane icon"></i><%= t :passport %></a>
       </div>
     </div>
     
@@ -42,18 +42,18 @@
 
       <%= link_to conversations_path, class: 'item' do %>
       
-      <%= content_tag :i, "", class: 'user icon' %>Profile
+      <%= content_tag :i, "", class: 'user icon' %><%= t :profile %>
       <% end %>
 
       <%= link_to edit_user_path(current_user), class: 'item' do %>
       
-      <%= content_tag :i, "", class: 'settings icon' %>Settings
+      <%= content_tag :i, "", class: 'settings icon' %><%= t :settings %>
       <% end %>
       <div class="ui divider">
       </div>
         <%= link_to logout_path, class: 'item', method: "delete" do %>
       
-      <%= content_tag :i, "", class: 'sign out icon' %>Log out
+      <%= content_tag :i, "", class: 'sign out icon' %><%= t :log_out %>
       <% end %>
       
        

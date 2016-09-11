@@ -1,3 +1,7 @@
+
+<div dir="rtl" lang="ar" >
+
+
 <div style="margin-top:-60px;"></div>
 <div class="ui grid">
 <div class="four wide column">
@@ -28,9 +32,9 @@
 <div class="ui large inverted vertical menu" style="width: 100%;">
 
 
-<%= mailbox_section "inbox", @box, text: t(:inbox) %>
-<%= mailbox_section "sent", @box, text: t(:sent) %>
-<%= mailbox_section "trash", @box, text: t(:trash) %>
+<%= mailbox_section "inbox", @box, style: "text-align:right;", text: t(:inbox) %>
+<%= mailbox_section "sent", @box, style: "text-align:right;", text: t(:sent) %>
+<%= mailbox_section "trash", @box, style: "text-align:right;", text: t(:trash) %>
 
   
 </div>
@@ -44,7 +48,7 @@
 <div class="user-content">
 <%= render 'shared/flash_message' %>
 </div>
-	
+	<div style="text-align:right;">
 <h1><%= t :conversations %></h1>
 <p>
 	<%= link_to t(:new_conversation), new_message_path, class: "ui blue button" %>
@@ -55,7 +59,7 @@
 			<%= link_to t(:empty_trash), empty_trash_conversations_path, class: "ui positive button", method: :delete, data: { confirm: 'Are you sure ?' } %>
 		</p>
 	<% end %>
-	
+	</div>
 <ul class="ui items">
 
 	<%= render partial: 'conversations/conversation', collection: @conversations %>
@@ -114,4 +118,7 @@
 	<br>
 	<br>
 </div>
+</div>
+
+
 </div>

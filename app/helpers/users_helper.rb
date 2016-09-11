@@ -14,9 +14,9 @@ module UsersHelper
 
 	def form_button_text(update)
 		if !update
-			yield "Create account" 
+			yield "create_account" 
 		else
-			yield "Save changes" 
+			yield "save_changes" 
 		end
 	end
 	

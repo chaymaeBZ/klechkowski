@@ -52,7 +52,7 @@ gem 'fog', '1.23.0'
 gem 'net-ssh'
 
 
-gem 'gravatar_image_tag'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

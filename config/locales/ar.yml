@@ -1,4 +1,7 @@
 ar:
+  will_paginate:
+    next_label: التالي ->
+    previous_label: <- سابق
   activerecord:
     models:
       user: مستخدم
@@ -296,7 +299,7 @@ ar:
   article_deleted: "تم حذف المقال بنجاح"
   moved_to_trash: "تم نقل المحادثة إلى سلة المهملات"
   trash_cleaned: "تم تنظيف سلة المهملات"
-  marked_as_read: "تحديد المحادثة مقروءة"
+  marked_as_read: "تم تحديد المحادثة مقروءة"
   message_sent: "تم ارسال الرسالة"
   conversation_restored: "تم ترميم المحادثة"
   email_sent_with_instructions: "تم ارسال إرشادات إعادة تعيين كلمة السرإلى بريدك الإلكتروني"
@@ -309,3 +312,54 @@ ar:
   activate_your_account: "يرجى التحقق من بريدك الالكتروني لتفعيل الحساب"
   user_deleted: "تم حذف المستخدم"
   profile_updated: "تم تحديث الصفحة الخاصة بك بنجاح"
+  restore: "استعادة"
+  mark_as_read: "تحديد كمقروء"
+  move_to_trash: "نقل إلى سلة المهملات"
+  new_article: "كتابة موضوع جديد"
+  inbox: "صندوق الاستقبال"
+  sent: "الرسائل المرسلة"
+  trash: "سلة المهملات"
+  new_conversation: "محادثة جديدة"
+  empty_trash: "إفراغ سلة المهملات"
+  conversations: "المحادثات"
+  conversation: "المحادثة"
+  chatting_with: "اتحدث مع"
+  says_at: "يقول في"
+  type_something: "أكتب شيئا ..."
+  send: "إرسال الرسالة"
+  about: "حول"
+  contact_us: "اتصل بنا"
+  help: "مساعدة"
+  papers: "أوراق"
+  users: "المستخدمين"
+  election: "انتخابات"
+  ramed: "رميد"
+  permis: "رخصة السياقة"
+  passport: "جواز سفر"
+  profile: "البيانات الشخصية"
+  settings: "إعدادات"
+  log_out: "خروج"
+  see_full_map: "انظر الخريطة الكاملة"
+  subject: "الموضوع"
+  message: "الرسالة"
+  chose_recipients: "اختار المتلقين"
+  reservé_employé_wilaya: "خاص بموظفي الولاية"
+  reset_password: "اعادة تعيين كلمة السر"
+  confirmation: "تأكيد"
+  password_forgotten: "نسيت كلمة المرور"
+  name: الإسم
+  email: البريد الإلكتروني
+  password: كلمة السر
+  password_confirmation: تثبيت كلمة السر
+  login: "تسجيل الدخول"
+  remember_me: "تسجيل الدخول"
+  note: "ملاحظة"
+  create_account: "إنشاء حساب"
+  save_changes: "حفظ التغييرات"
+  shipping_information: "معلومات الشحن"
+  change_profil_picture: "تغيير الصورة الشخصية"
+  delete: "حذف"
+  all_users: "جميع المستخدمين"
+  created_at: "أنشئ في"
+  send_message: "إرسال رسالة"
+  services: "الخدمات"

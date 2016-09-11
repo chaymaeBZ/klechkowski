@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<div class="new">
+<div dir="rtl" lang="ar" class="new">
 <div class="ui middle aligned center aligned grid" >
   <div class="column">
     <h2 class="ui image header" >
@@ -17,24 +17,24 @@
 <div class="ui segment" style="background: rgb(246, 227, 186);">
 
 
-  <h4 class="ui dividing large header"><%= t :login %></h4>
+  <h4 class="ui right dividing large header"><%= t :login %></h4>
 
-    <%= form_for(:session, url: login_path, html: { class: 'ui form' }) do |f| %>
+    <%= form_for(:session, url: login_path, html: { class: 'ui form', style: "overflow:hidden;" }) do |f| %>
 
 
 
     <div class="field">
-    <%= f.label :email, t(:email) %>
+    <%= f.label :email, t(:email), style: "float:right;" %>
     <%= f.text_field :email, placeholder: "foobar@example.com", type: 'email'%>
     </div>
 
 
     <div class="field"> 
-    <%= f.label :password, t(:password) %>
+    <%= f.label :password, t(:password), style: "float:right;" %>
     <%= f.password_field :password, placeholder: "Password", type: 'password' %>
     </div>
 
-    <div class="field">
+    <div class="field" style="float:right;">
     <div class="ui checkbox">
 	<%= f.check_box :remember_me, class: "hidden" %>
     <%= f.label :remember_me, t(:remember_me) %>
@@ -44,9 +44,9 @@
     <%= f.submit t(:login), class: "ui fluid blue button" %>
     <% end %>
 </div>
-<div class="ui segment orange">
-  <i class="icon help"></i>
-  <%= link_to t(:password_forgotten), new_password_reset_path %>
+<div class="ui segment orange" style="overflow:hidden;">
+  <i class="icon help" style="float:right;"></i>
+  <%= link_to t(:password_forgotten), new_password_reset_path, style: "float:right;" %>
 </div>
  
 

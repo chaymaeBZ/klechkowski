@@ -18,11 +18,11 @@
 		    <div class="content">
 		      <a class="header"><%= @user.name %></a>
 		      <div class="meta">
-		        <span class="date">Create in <%= @user.created_at.strftime("%-d %B %Y") %></span>
+		        <span class="date"><%= t :created_at %><br><%= @user.created_at.strftime("%-d %B %Y") %></span>
 		      </div>
 		    </div>
 		    <div class="extra content">
-		      <%= link_to "Send message", new_message_path(to: @user.id), class: "ui blue button" %>
+		      <%= link_to t(:send_message), new_message_path(to: @user.id), class: "ui blue button" %>
 		    </div>
 		</div>
 	</div>

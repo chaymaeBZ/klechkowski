@@ -1,0 +1,9 @@
+<% flash.each do |message_type, message| %>
+<div class="ui <%= message_class(message_type) %> message" style="overflow:hidden;">
+ <div style="float:left;"> <i class="close icon"></i></div>
+  <div class="header" style="text-align:right;">
+    <%= t :note %>
+  </div>
+  <p style="text-align:right;"><%= message %></p>
+</div>
+<% end %>

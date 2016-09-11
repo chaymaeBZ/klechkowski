@@ -1,13 +1,16 @@
 
-<div class="ui raised segment articles" style="margin: 60px 400px; background: rgb(246, 227, 186);">
+<div class="ui raised segment articles" dir="rtl" lang="ar" style="margin: 60px 400px; background: rgb(246, 227, 186);">
 
-  <h4 class="ui dividing large header"><%= t :conversation %></h4>
-  <div class="ui segment">
-<p>
+  <h4 class="ui right dividing large header"><%= t :conversation %></h4>
+  <div class="ui segment" style="overflow:hidden;">
+<p class="right">
 	<%= t :chatting_with %>
+	<div style="text-align:right;">
 	<%= render 'conversations/participants', conversation: @conversation %>
+	</div>
 </p>
-  	<% if arabic?(@conversation.subject) %>
+
+	<% if arabic?(@conversation.subject) %>
 	<h3 style="text-align: right">
 		<%= @conversation.subject %>
 	</h3>
@@ -15,11 +18,10 @@
   	<% else %>
   	<h4><%= @conversation.subject %></h4>
   	<% end %>
+
   	
   	<% @conversation.receipts_for(current_user).each do |receipt| %>
-
   	<% message = receipt.message %>
-
 	  	<div class="ui comments">
 	  		<div class="ui feed">
 	  			<div class="event">
@@ -29,19 +31,19 @@
 				    	</div>
 				      
 				   
-				    <div class="content">
+				    <div class="content" style="text-align: right;">
 				      <div class="summary">
-				        <a><%= message.sender.name %></a><%= t :says_at %>
+				        <a><%= message.sender.name %></a> <%= t :says_at %>
 				        <div class="date">
 				          <%= l message.created_at, format: :long %>
 				        </div>
 				      </div>
 				      <% if arabic?(message.body) %>
-				      <div class="extra text" style="text-align:right;">
+				      <div class="extra text" style="text-align:right;text-indent: 1.2em;">
 				       <%= message.body %>
 				      </div>
 				      <% else %>
-				      <div class="extra text">
+				      <div class="extra text" dir="ltr" lang="fr">
 				       <%= message.body %>
 				      </div>
 				      <% end %>
@@ -55,11 +57,7 @@
 	<div class="field">
 		<%= text_area_tag 'body', nil, placeholder: t(:type_something), required: true %>
 	</div>
-	<%= submit_tag t(:send), class: "ui submit button" %>
+	<%= submit_tag t(:send), class: "ui right floated submit button" %>
 	<% end %>
   </div>
 </div>
-
-
-
- 

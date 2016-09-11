@@ -1,9 +1,9 @@
 
-<li class="list-group-item clearfix">
+<li class="list-group-item clearfix" style="text-align:right;" dir="rtl" lang="ar" >
   <%= link_to conversation.subject, conversation_path(conversation) %>
 
 
-  <div class="btn-group-vertical pull-right">
+  <div class="btn-group-vertical pull-left">
     <% if conversation.is_trashed?(current_user) %>
       <%= link_to t(:restore), restore_conversation_path(conversation), class: "ui mini primary button", method: :post %>
     <% else %>
@@ -18,7 +18,8 @@
 <p><%= render 'conversations/participants', conversation: conversation %></p>
 
   <p><%= truncate conversation.last_message.body, length: 170 %><br>
-    <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
+    <small>(<span class="text-muted"><%= l conversation.last_message.created_at, format: :long %></span>)</small></p>
 
 </li>
+
 

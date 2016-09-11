@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from ActiveRecord::RecordNotFound do 
-  	flash[:warning] = t :resource_ont_found
+  	flash[:warning] = t :resource_not_found
   	redirect_back_or root_path
   end
 

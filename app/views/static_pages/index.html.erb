@@ -79,19 +79,45 @@
 
 
 
-  <div class="articles" dir="rtl" lang="ar">
+  <div class="articles" >
   <% i = 0 %>
   <% @articles.each do |article| %>
   <% color = gen_color(i) %>
 <div class="ui <%= "#{color}" %> message" style="overflow: hidden;">
+
+
+<% if arabic?(article.title.to_s) %>
+<div dir="rtl" lang="ar">
+
+<div style="text-align: left;"><% if current_user && current_user.admin? %>
+<u><%= link_to "delete", article, method: :delete, data: { confirm: "You sure?" } %></u>
+  <% end %>
+</div>
+    <div class="ui medium <%= "#{color}" %> dividing header" style="text-align:right;"><%= article.title %></div>
+    <div class="sub header" style="text-align:right;"><%= l article.created_at, format: :long %></div>
+  <br>
+
+  <% if article.picture? %>
+  <%= image_tag article.picture.url, class: "ui small left floated image" %>
+  <% else %>
+  <img src="<%= asset_path 'wali.png' %>" class="ui small left floated image" >
+  <% end %>
+<div style="text-align:right;">
+  <%= truncate article.content, length: 250 %>
+</div>
+  <div class="ui tiny left aligned header">
+  <u><%= link_to "\nقراءة المزيد ...", article %></u>
+  </div>
+</div>
+
+<% else %>
+
 <div style="text-align: right;"><% if current_user && current_user.admin? %>
 <u><%= link_to "delete", article, method: :delete, data: { confirm: "You sure?" } %></u>
   <% end %>
 </div>
-
-
   <div class="ui medium <%= "#{color}" %> dividing header"><%= article.title %></div>
-<div class="sub header"><%= article.created_at.to_s(:long) %></div>
+  <div class="sub header" dir="rtl" lang="ar"><%= l article.created_at, format: :long %></div>
 <br>
 
 <% if article.picture? %>
@@ -105,6 +131,11 @@
 <div class="ui tiny right aligned header">
 <u><%= link_to "read more...", article %></u>
 </div>
+
+
+<% end %>
+
+
 
 </div>
   <% i=i+1 %>

@@ -1,9 +1,6 @@
 
 <% if object.errors.any? %>
-<% if arabic? %>
-	<div dir="rtl" lang="ar" style="text-align: right;">
-	<h1>IT is arabic</h1>
-<% end %>	
+	
 <div class="ui error message" >
 <div class="header" >
       The form contains <%= pluralize(object.errors.count, "error") %>:
@@ -16,10 +13,7 @@
 </ul>
 </div>
 
-	
-<% if arabic? %>
-	</div>
-<% end %>
+
 
 <% end %>
 

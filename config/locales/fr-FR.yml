@@ -1,0 +1,294 @@
+fr-FR:
+  will_paginate:
+    next_label: suivant ->
+    previous_label: <- precedant
+  activerecord:
+    models:
+      user: utilisateur
+    attributes:
+      user:
+        name: nom
+        email: email
+        password: mot de passe
+        password_confirmation: confirmation du mot de passe
+    errors:
+      messages:
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: "Vous ne pouvez pas supprimer l'enregistrement car une personne à charge %{record} existe"
+          has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    -
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    month_names:
+    -
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_days:
+        one: 1 jour
+        other: "%{count} jours"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_months:
+        one: 1 mois
+        other: "%{count} mois"
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Seconde
+      year: Année
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      present: doit être vide
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: "Validation échouée: %{errors}"
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      required: doit exister
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+      other_than: doit être différent de %{count}
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: octet
+            other: octets
+          gb: Go
+          kb: ko
+          mb: Mo
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+    pm: pm
+  account_activated: "votre compte a été activé avec succès"
+  invalid_activation_link: "Lien d'activation non valide"
+  log_in_first: "Veuillez vous authentifier"
+  resource_not_found: "resource manquante" 
+  article_published: "l'article a été publié avec succès"
+  article_deleted: "l'article a été supprimer avec succès"
+  moved_to_trash: "la conversation a été supprimé avec succès"
+  trash_cleaned: "votre poubelle est maintenant vide"
+  marked_as_read: "la conversation a été marqué comme lu"
+  message_sent: "Message envoyé"
+  conversation_restored: "La conversation a bien été recuperé"
+  email_sent_with_instructions: "un email a été envoyé avec les instructions pour réinitialiser votre mot de passe"
+  email_not_found: "email introuvable"
+  no_blank_password: "mot de passe ne peut pas etre vide"
+  password_reset: "votre mot de passe a bien été réinitialiser"
+  password_reset_expired: "lien de réinitialisation du mot de passe a expiré"
+  account_not_activated: "Votre compte n'est pas activé"
+  email_or_password_invalid: "combinaison invalide email / mot de passe"
+  activate_your_account: "Votre compte n'est pas encore activé! verifiez votre boite email"
+  user_deleted: "utilisateur supprimé"
+  profile_updated: "votre profile est mis à jour"
+  restore: "restaurer"
+  mark_as_read: "marquer comme lu"
+  move_to_trash: "mettre à la poubelle"
+  new_article: "nouveau article"
+  inbox: "messages reçus"
+  sent: "messages envoyés"
+  trash: "poubelle"
+  new_conversation: "nouvelle conversation"
+  empty_trash: "vider la poubelle"
+  conversations: "Conversations"
+  conversation: "Conversation"
+  chatting_with: "les participants :"
+  says_at: " dit à "
+  type_something: "Ecris quelque chose ..."
+  send: "envoyer le message"
+  about: "about"
+  contact_us: "nous contacter"
+  help: "aide"
+  papers: "papiers"
+  users: "utilisateurs"
+  election: "elections"
+  ramed: "ramed"
+  permis: "permis de conduire"
+  passport: "passport"
+  profile: "profile"
+  settings: "parametres"
+  log_out: "se deconnecter"
+  see_full_map: "voir la carte entière"
+  subject: "sujet"
+  message: "message"
+  chose_recipients: "choisi les destinataires"
+  reservé_employé_wilaya: "reservé aux employés de la wilaya"
+  reset_password: "réinitialiser le mot de passe"
+  confirmation: "confirmation"
+  password_forgotten: "mot de passe oublié"
+  name: nom
+  email: email
+  password: mot de passe
+  password_confirmation: confirmation du mot de passe
+  login: "login"
+  remember_me: "se souvenir de moi"
+  note: "note"
+  create_account: "creer le compte"
+  save_changes: "sauvegarder"
+  shipping_information: "Saisir les informations"
+  change_profil_picture: "changer la photo de profile"
+  delete: "supprimer"
+  all_users: "tous les utilisateurs"
+  created_at: "créé à"
+  send_message: "envoyer un message"
+  services: "services"

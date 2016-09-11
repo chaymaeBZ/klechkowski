@@ -1,0 +1,31 @@
+
+<div dir="rtl" lang="ar" style="margin: 10px 200px 50px;">
+
+<div class="ui raised segment articles" style=" border-radius: 25px;background: rgb(246, 227, 186);">
+
+  <h4 class="ui right dividing large header">كتابة الموضوع</h4>
+
+<%= form_for(@article, html:{ multipart: true, class:"ui form", style:"overflow:hidden;" }) do |f| %>
+	<div class="article_errors"><%= render 'shared/error_massages' , object: f.object %></div>
+
+<div class="ui left corner labeled input" style="float:right;">
+<%= f.text_field :title, placeholder: "العنوان", type:'text', style:"text-align: right;" %>
+	<div class="ui left corner label">
+    <i class="asterisk icon"></i>
+  </div>
+</div>
+ <div class="ui field " >
+<%= f.label :file, "الصورة :", style:"margin: 8px; display:block;float:right;" %>
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+
+</div>
+
+  <div class="ui required field" >
+<%= f.label :content, "المحتوى :", style:"margin: 8px; float:right;" %>
+<%= f.text_area :content, placeholder: "يرجى كتابة المحتوى هنا ..." %>
+</div>
+<%= f.submit "نشر", class:"ui right floated submit button", style:"background: #CAC8C8;" %>
+
+<% end %>
+</div>
+</div>

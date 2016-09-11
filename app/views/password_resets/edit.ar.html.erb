@@ -1,4 +1,5 @@
 <% provide(:title, 'Sign up') %>
+<div dir="rtl" lang="ar">
 <div class="new">
 <div class="ui middle aligned center aligned grid" >
   <div class="column">
@@ -17,19 +18,19 @@
 
 
 
-  <h4 class="ui dividing large header"><%= t :reset_password %></h4>
+  <h4 class="ui right dividing large header"><%= t :reset_password %></h4>
 
-    <%= form_for(@user, url: password_reset_path(params[:id]), html: { class: 'ui form' }) do |f| %>
+    <%= form_for(@user, url: password_reset_path(params[:id]), html: { class: 'ui form', style:"overflow: hidden;" }) do |f| %>
 
 	<%= hidden_field_tag :email, @user.email %>
 
 	<div class="field">
-    <%= f.label :password, t(:password) %>
+    <%= f.label :password, t(:password), style: "float:right;" %>
     <%= f.password_field :password, placeholder: "Password", type: 'password' %>
     </div>
 
     <div class="field">
-    <%= f.label :password_confirmation, t(:confirmation) %>
+    <%= f.label :password_confirmation, t(:confirmation), style: "float:right;" %>
     <%= f.password_field :password_confirmation, placeholder: "Retype password", type: 'password' %>
     </div>
 
@@ -37,4 +38,5 @@
     <% end %>
 </div>
 
+</div>
 </div>

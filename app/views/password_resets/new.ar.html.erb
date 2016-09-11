@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<div class="new">
+<div dir="rtl" lang="ar" class="new">
 <div class="ui middle aligned center aligned grid" >
   <div class="column">
     <h2 class="ui image header" >
@@ -15,18 +15,18 @@
 <%= render 'shared/flash_message' %></div>
 
 
-<div class="ui raised segment" style="margin: 60px 400px; background: rgb(246, 227, 186);">
+<div class="ui raised segment" style="margin: 60px 400px; background: rgb(246, 227, 186); ">
 
 
 
-  <h4 class="ui dividing large header"><%= t :password_forgotten %></h4>
+  <h4 class="ui right dividing large header"><%= t :password_forgotten %></h4>
 
-    <%= form_for(:password_reset, url: password_resets_path, html: { class: 'ui form' }) do |f| %>
+    <%= form_for(:password_reset, url: password_resets_path, html: { class: 'ui form', style: "overflow:hidden;" }) do |f| %>
 
 
 
     <div class="field">
-    <%= f.label :email, t(:email) %>
+    <%= f.label :email, t(:email), style: "float:right;" %>
     <%= f.text_field :email, placeholder: "foobar@example.com", type: 'email'%>
     </div>
 

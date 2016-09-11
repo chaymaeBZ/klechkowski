@@ -1,3 +1,23 @@
+<% if arabic?(@article.title.to_s) %>
+
+<div dir="rtl" lang="ar" style="margin: 10px 200px;">
+
+<div class="ui raised segment" style=" border-radius: 25px;background: radial-gradient( #FFFFFF 10%, rgba(201, 201, 42, 0.43)); margin: 20px 100px 50px; padding: 30px 50px;">
+
+  <h4 class="ui right dividing large header"><%= @article.title %></h4>
+
+  <!-- if  @article.picture not nil -->
+<%= image_tag @article.picture.url, class: "ui large centered rounded image", style: "margin-bottom: 20px;" if @article.picture? %>
+
+<div style="text-align:right; text-indent: 1.2em; "> 
+<%= @article.content %>
+</div>
+</div>
+</div>
+
+
+<% else %>
+
 <div style="margin: 10px 200px;">
 
 <div class="ui raised segment" style=" border-radius: 25px;background: radial-gradient( #FFFFFF 10%, rgba(201, 201, 42, 0.43)); margin: 20px 100px 50px; padding: 30px 50px;">
@@ -12,3 +32,5 @@
 </div>
 </div>
 </div>
+
+<% end %>
