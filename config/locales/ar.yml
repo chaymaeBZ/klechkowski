@@ -1,7 +1,7 @@
 ar:
   will_paginate:
     next_label: التالي ->
-    previous_label: <- سابق
+    previous_label: <- السابق
   activerecord:
     models:
       user: مستخدم
@@ -363,3 +363,4 @@ ar:
   created_at: "أنشئ في"
   send_message: "إرسال رسالة"
   services: "الخدمات"
+  update_your_profile: "تحديث ملفك الشخصي"

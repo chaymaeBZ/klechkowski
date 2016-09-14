@@ -12,7 +12,9 @@
   <a class="item " href="/"><%= t :contact_us %><i class="talk icon" style="margin-left: 5px;"></i></a>
   <a class="item <%= 'active item' if current_page?(help_path) %>" href="/help"><%= t :help %><i class="help icon"></i></a>
   <a class="item"><%= t :papers %><i class="file text outline icon" style="margin-left: 5px;"></i></a>
-
+<%= link_to "french", root_path(locale: "fr-FR"), class: "item" %>
+<%= link_to "arabic", root_path(locale: "ar"), class: "item" %>
+<%= link_to "sign up", signUp_path, class: "item" if logged_in? and current_user.admin? %>  
 <%= link_to users_path, class: 'item' do %><%= t :users %>
     <%= content_tag :i, "", class: 'users icon', style: "margin-left: 5px;" %>
     <% end %>
@@ -29,7 +31,7 @@
     
     <% if !logged_in? %>
       <div class="item">
-      <%= link_to "Log in", login_path, class: "ui olive button" %>
+      <%= link_to t(:login), login_path, class: "ui olive button" %>
       </div>
     <% else %>
 

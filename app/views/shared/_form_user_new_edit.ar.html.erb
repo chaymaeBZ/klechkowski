@@ -4,7 +4,7 @@
     <div class="column"><img src="<%= asset_path 'wilaya.png' %>" class="image" height="110" width="110" style="margin: 0 auto;"></div>
       
       <div class="white" >
-        <%= header_text(@update) %>
+        <%= t   header_text(@update) %>
       </div>
     </h2>
 </div>
@@ -41,9 +41,9 @@
     <%= f.password_field :password_confirmation, placeholder: "Retype password", type: 'password' %>
     </div>
 
-    <div class="fileld" style="margin-bottom: 20px;">
+    <div class="fileld" style="margin-bottom: 20px;text-align:right;">
      <% if @update %>
-        <a href="http://gravatar.com/emails" target=_blank style="float: right;"><u>
+        <a href="http://gravatar.com/emails" target=_blank><u>
         <%= t :change_profil_picture %></u></a>
      <% end %>
 

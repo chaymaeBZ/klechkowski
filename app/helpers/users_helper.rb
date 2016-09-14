@@ -9,7 +9,7 @@ module UsersHelper
 	end
 
 	def header_text(update)
-		update ? "Update your profile" : "خاص بموظفي الولاية" 
+		update ? "update_your_profile" : "reservé_employé_wilaya" 
 	end
 
 	def form_button_text(update)
