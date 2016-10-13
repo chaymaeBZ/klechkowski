@@ -14,87 +14,84 @@
 ActiveRecord::Schema.define(version: 20160820220356) do
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "content",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "picture",    limit: 255
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "picture"
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
-    t.integer "unsubscriber_id",   limit: 4
-    t.string  "unsubscriber_type", limit: 255
-    t.integer "conversation_id",   limit: 4
+    t.integer "unsubscriber_id"
+    t.string  "unsubscriber_type"
+    t.integer "conversation_id"
   end
 
-  add_index "mailboxer_conversation_opt_outs", ["conversation_id"], name: "index_mailboxer_conversation_opt_outs_on_conversation_id", using: :btree
-  add_index "mailboxer_conversation_opt_outs", ["unsubscriber_id", "unsubscriber_type"], name: "index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type", using: :btree
+  add_index "mailboxer_conversation_opt_outs", ["conversation_id"], name: "index_mailboxer_conversation_opt_outs_on_conversation_id"
+  add_index "mailboxer_conversation_opt_outs", ["unsubscriber_id", "unsubscriber_type"], name: "index_mailboxer_conversation_opt_outs_on_unsubscriber_id_type"
 
   create_table "mailboxer_conversations", force: :cascade do |t|
-    t.string   "subject",    limit: 255, default: ""
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "subject",    default: ""
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "mailboxer_notifications", force: :cascade do |t|
-    t.string   "type",                 limit: 255
-    t.text     "body",                 limit: 65535
-    t.string   "subject",              limit: 255,   default: ""
-    t.integer  "sender_id",            limit: 4
-    t.string   "sender_type",          limit: 255
-    t.integer  "conversation_id",      limit: 4
-    t.boolean  "draft",                              default: false
-    t.string   "notification_code",    limit: 255
-    t.integer  "notified_object_id",   limit: 4
-    t.string   "notified_object_type", limit: 255
-    t.string   "attachment",           limit: 255
-    t.datetime "updated_at",                                         null: false
-    t.datetime "created_at",                                         null: false
-    t.boolean  "global",                             default: false
+    t.string   "type"
+    t.text     "body"
+    t.string   "subject",              default: ""
+    t.integer  "sender_id"
+    t.string   "sender_type"
+    t.integer  "conversation_id"
+    t.boolean  "draft",                default: false
+    t.string   "notification_code"
+    t.integer  "notified_object_id"
+    t.string   "notified_object_type"
+    t.string   "attachment"
+    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                           null: false
+    t.boolean  "global",               default: false
     t.datetime "expires"
   end
 
-  add_index "mailboxer_notifications", ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id", using: :btree
-  add_index "mailboxer_notifications", ["notified_object_id", "notified_object_type"], name: "index_mailboxer_notifications_on_notified_object_id_and_type", using: :btree
-  add_index "mailboxer_notifications", ["sender_id", "sender_type"], name: "index_mailboxer_notifications_on_sender_id_and_sender_type", using: :btree
-  add_index "mailboxer_notifications", ["type"], name: "index_mailboxer_notifications_on_type", using: :btree
+  add_index "mailboxer_notifications", ["conversation_id"], name: "index_mailboxer_notifications_on_conversation_id"
+  add_index "mailboxer_notifications", ["notified_object_id", "notified_object_type"], name: "index_mailboxer_notifications_on_notified_object_id_and_type"
+  add_index "mailboxer_notifications", ["sender_id", "sender_type"], name: "index_mailboxer_notifications_on_sender_id_and_sender_type"
+  add_index "mailboxer_notifications", ["type"], name: "index_mailboxer_notifications_on_type"
 
   create_table "mailboxer_receipts", force: :cascade do |t|
-    t.integer  "receiver_id",     limit: 4
-    t.string   "receiver_type",   limit: 255
-    t.integer  "notification_id", limit: 4,                   null: false
-    t.boolean  "is_read",                     default: false
-    t.boolean  "trashed",                     default: false
-    t.boolean  "deleted",                     default: false
+    t.integer  "receiver_id"
+    t.string   "receiver_type"
+    t.integer  "notification_id",                            null: false
+    t.boolean  "is_read",                    default: false
+    t.boolean  "trashed",                    default: false
+    t.boolean  "deleted",                    default: false
     t.string   "mailbox_type",    limit: 25
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-    t.boolean  "is_delivered",                default: false
-    t.string   "delivery_method", limit: 255
-    t.string   "message_id",      limit: 255
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.boolean  "is_delivered",               default: false
+    t.string   "delivery_method"
+    t.string   "message_id"
   end
 
-  add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
-  add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
+  add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
+  add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",              limit: 255
-    t.string   "email",             limit: 255
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.string   "password_digest",   limit: 255
-    t.string   "remember_digest",   limit: 255
-    t.boolean  "admin",                         default: false
-    t.string   "activation_digest", limit: 255
-    t.boolean  "activated",                     default: false
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "password_digest"
+    t.string   "remember_digest"
+    t.boolean  "admin",             default: false
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
     t.datetime "activated_at"
-    t.string   "reset_digest",      limit: 255
+    t.string   "reset_digest"
     t.datetime "reset_sent_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
-  add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
-  add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
-  add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
 end
